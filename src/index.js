@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser');
 const { engine } = require('express-handlebars');
 const { Server } = require("socket.io");
 const http = require('http');
-const MongoStore = require('connect-mongo').default; // Import MongoStore
 const mongoose = require('mongoose'); // Import mongoose
 const connect_db = require('./config/db');
 const route = require('./routes');
@@ -25,8 +24,8 @@ const dbConnection = mongoose.createConnection(connect_db.uri);
 app.use(session({
     secret: 'your-secret-key',
     resave: false,
-    saveUninitialized: true,
-    store: new MongoStore({ mongooseConnection: dbConnection })
+    saveUninitialized: true
+
 }));
 
 app.use(cookieParser());
