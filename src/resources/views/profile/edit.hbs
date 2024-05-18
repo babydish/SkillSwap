@@ -1,0 +1,48 @@
+<div class="mt-4">
+
+    <form method="post" action="/profile/{{information_id._id}}/edited">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{information_id.name}}">
+
+        </div>
+        <div class="form-group">
+            <label for="skill">Email</label>
+            <input type="text" class="form-control" id="email" name="email" value="{{information_id.email}}">
+
+        </div>
+        <div class="form-group">
+            <label for="current_skills">Current Skill</label>
+            <input type="text" class="form-control" id="current_skills" name="current_skills"
+                value="{{information_id.current_skills}}">
+
+        </div>
+        <div class="form-group">
+            <label for="skill_want_to_learn">Skill want to skill_want_to_learn</label>
+            <input type="text" class="form-control" id="skill_want_to_learn" name="skill_want_to_learn"
+                value="{{information_id.skill_want_to_learn}}">
+
+        </div>
+        <div class="form-group">
+            <label for="skill_want_to_learn">Avatar</label>
+            <input type="text" class="form-control" id="avatar" name="avatar" value="{{information_id.avatar}}">
+
+        </div>
+        <div class="form-group">
+            <label for="course_image">Course Image</label>
+            <input type="text" class="form-control" name="course_image" id="course_image"
+                value="{{information_id.course_image}}">
+
+        </div>
+        <div class="form-group">
+            <label for="description_course">Mô Tả Khóa Học</label>
+            <input type="text" class="form-control" name="description_course" id="description_course"
+                value="{{information_id.description_course}}">
+
+        </div>
+
+
+        <button type="submit" class="btn btn-primary mt-3">Edit</button>
+
+    </form>
+</div>

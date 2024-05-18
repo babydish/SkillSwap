@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">SkillSwap</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 smb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                {{#if userData.name}}
+                <!-- Hiển thị nút "Đăng xuất" nếu đã đăng nhập -->
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/user/logout">Logout</a>
+                </li>
+                {{else}}
+                <!-- Hiển thị nút "Đăng nhập" nếu chưa đăng nhập -->
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/user/login">Login</a>
+                </li>
+                {{/if}}
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Chức Năng
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        {{#if userData.name}}
+                        <li><a class="dropdown-item" href="/store/create">Tạo Khóa Học</a></li>
+                        <li><a class="dropdown-item" href="/profile/show">Xem Profile</a></li>
+                        <li><a class="dropdown-item" href="/store/information">Khoa Hoc Cua Toi</a></li>
+                        {{else}}
+                        <li><a class="dropdown-item" href="/profile/create">Đăng Kí Tài Khoản</a></li>
+                        {{/if}}
+
+
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <form class="d-flex" action="/search" method="get">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
