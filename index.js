@@ -19,7 +19,7 @@ const port = process.env.PORT || 5000;
 connect_db.connect(); // Connect to MongoDB
 
 // Create a new mongoose connection
-const dbConnection = mongoose.createConnection(connect_db.uri);
+
 
 app.use(session({
     secret: 'your-secret-key',
